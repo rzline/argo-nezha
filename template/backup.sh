@@ -17,6 +17,9 @@ DASHBOARD_VERSION=
 
 ########
 
+rm -r /dashboard/data/log
+rm -r /dashboard/data/temp
+
 # version: 2024.12.18
 
 warning() { echo -e "\033[31m\033[01m$*\033[0m"; }  # 红色

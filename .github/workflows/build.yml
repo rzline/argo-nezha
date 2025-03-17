@@ -1,4 +1,4 @@
-name: Build and Push Docker Image to Docker Hub and GitHub Container Registry
+name: Build and Push Docker Image to Docker Hub
 
 on:
   push:
@@ -6,18 +6,13 @@ on:
       - main
 
 env:
-  IMAGE_NAME: argo-nezha  # Docker 镜像名称
-  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}  # Docker Hub 用户名
-  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}  # Docker Hub 密码或 Access Token
-  GITHUB_USER: ${{ github.actor }}  # GitHub 用户名
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token
+  IMAGE_NAME: argo-nezha  # 你 Docker Hub 仓库中的镜像名称 (不包含用户名)
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # Docker Hub 用户名，存储在 Secrets 中
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }} # Docker Hub 密码或 Access Token，存储在 Secrets 中
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write  # 授予 packages:write 权限，允许推送镜像到 GitHub Container Registry
-      contents: read  # 保持 contents:read 权限，用于 checkout 代码
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,20 +21,10 @@ jobs:
       - name: Log in to Docker Hub
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      # 登录到 GitHub Container Registry
-      - name: Log in to GitHub Container Registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
       # 构建 Docker 镜像
       - name: Build Docker image
-        run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest .
-          docker build -t ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:latest .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest .
 
       # 推送 Docker 镜像到 Docker Hub
-      - name: Push Docker image to Docker Hub
+      - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
-
-      # 推送 Docker 镜像到 GitHub Container Registry
-      - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:latest

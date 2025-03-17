@@ -2,8 +2,8 @@ FROM debian
 
 WORKDIR /dashboard
 
-COPY install.sh /tmp/install.sh
+COPY install.sh entrypoint.sh ./
 
-RUN chmod +x /tmp/install.sh && /tmp/install.sh
+RUN chmod +x ./install.sh && ./install.sh
 
 ENTRYPOINT ["./entrypoint.sh"]

@@ -27,6 +27,4 @@ git config --global core.compression 0
 git config --global advice.detachedHead false
 git config --global pack.threads 1
 git config --global pack.windowMemory 50m
-apt-get clean
-rm -rf /var/lib/apt/lists/*
-rm install.sh
+rm /dashboard/install.sh

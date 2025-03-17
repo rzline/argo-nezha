@@ -3,7 +3,7 @@
 set -e # 脚本出错立即退出
 
 apt-get update
-apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates
+apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates nodejs npm
 wget -N git.io/aria2.sh
 chmod +x aria2.sh
 echo 1 | ./aria2.sh
@@ -20,6 +20,8 @@ mv /opt/sshwifty_linux_amd64 /dashboard/sshwifty
 chmod +x sshwifty
 rm -r /opt
 mkdir /opt
+git clone https://github.com/teralomaniac/clewd
+cd clewd && ./start.sh
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

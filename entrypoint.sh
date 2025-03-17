@@ -295,6 +295,13 @@ autorestart=true
 stderr_logfile=/dev/null
 stdout_logfile=/dev/null
 
+[program:alist]
+command=/dashboard/alist start
+directory=/dashboard
+autostart=true
+autorestart=true
+user=root
+
 [program:aria2]
 command=bash -c "echo 4 | /dashboard/aria2.sh"
 directory=/dashboard
@@ -304,13 +311,6 @@ user=root
 
 [program:sshwifty]
 command=/dashboard/sshwifty
-directory=/dashboard
-autostart=true
-autorestart=true
-user=root
-
-[program:alist]
-command=/dashboard/alist start
 directory=/dashboard
 autostart=true
 autorestart=true

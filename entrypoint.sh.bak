@@ -296,7 +296,7 @@ stderr_logfile=/dev/null
 stdout_logfile=/dev/null
 
 [program:alist]
-command=/dashboard/alist server
+command=/dashboard/alist start &
 directory=/dashboard
 autostart=true
 autorestart=true

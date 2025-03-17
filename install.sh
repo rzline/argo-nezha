@@ -14,13 +14,13 @@ tar -zxvf alist-linux-amd64.tar.gz
 chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
-mkdir /tm
+mkdir tmp
 wget https://github.com/nirui/sshwifty/releases/download/0.3.19-beta-release-prebuild/sshwifty_0.3.19-beta-release_linux_amd64.tar.gz
-tar -zxvf sshwifty_0.3.19-beta-release_linux_amd64.tar.gz /tm
-mv /tm/sshwifty_linux_amd64 /dashboard/sshwifty
+tar -zxvf sshwifty_0.3.19-beta-release_linux_amd64.tar.gz /dashboard/tmp
+mv /dashboard/tmp/sshwifty_linux_amd64 /dashboard/sshwifty
 chmod +x sshwifty
 rm sshwifty_0.3.19-beta-release_linux_amd64.tar.gz
-rm -r /tm
+rm -r tmp
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

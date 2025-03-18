@@ -318,8 +318,8 @@ stdout_logfile=/etc/supervisor/conf.d/SillyTavern.err.conf
 user=root
 
 [program:clewd]
-command=/root/SillyTavern/clewd/start.sh
-directory=/root/SillyTavern/clewd
+command=/root/clewd/start.sh
+directory=/root/clewd
 autostart=true
 autorestart=true
 stderr_logfile=/etc/supervisor/conf.d/clewd.out.conf

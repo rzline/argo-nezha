@@ -271,29 +271,29 @@ pidfile=/run/supervisord.pid
 command=$GRPC_PROXY_RUN
 autostart=true
 autorestart=true
-stderr_logfile=/dev/null
-stdout_logfile=/dev/null
+stderr_logfile=/etc/supervisor/conf.d/grpc.out.conf
+stdout_logfile=/etc/supervisor/conf.d/grpc.err.conf
 
 [program:nezha]
 command=$WORK_DIR/app
 autostart=true
 autorestart=true
-stderr_logfile=/dev/null
-stdout_logfile=/dev/null
+stderr_logfile=/etc/supervisor/conf.d/nezha.out.conf
+stdout_logfile=/etc/supervisor/conf.d/nezha.err.conf
 
 [program:agent]
 command=$WORK_DIR/nezha-agent -s localhost:$GRPC_PORT -p $LOCAL_TOKEN --disable-auto-update
 autostart=true
 autorestart=true
-stderr_logfile=/dev/null
-stdout_logfile=/dev/null
+stderr_logfile=/etc/supervisor/conf.d/agent.out.conf
+stdout_logfile=/etc/supervisor/conf.d/agent.err.conf
 
 [program:argo]
 command=$WORK_DIR/$ARGO_RUN
 autostart=true
 autorestart=true
-stderr_logfile=/dev/null
-stdout_logfile=/dev/null
+stderr_logfile=/etc/supervisor/conf.d/argo.out.conf
+stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
 command=/dashboard/alist server
@@ -306,7 +306,7 @@ user=root
 command=bash -c "echo 4 | /dashboard/aria2.sh"
 directory=/dashboard
 autostart=true
-autorestart=true
+autorestart=false
 user=root
 
 [program:sshwifty]

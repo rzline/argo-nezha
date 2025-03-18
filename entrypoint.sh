@@ -297,7 +297,7 @@ stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
 command=/root/alist/alist server
-directory=
+directory=/root/alist
 autostart=true
 autorestart=true
 user=root
@@ -309,7 +309,8 @@ autorestart=false
 user=root
 
 [program:clewd]
-command=/root/clewd/start.sh
+command=bash /root/clewd/start.sh
+directory=/root/clewd
 autostart=true
 autorestart=true
 user=root

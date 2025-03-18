@@ -307,14 +307,6 @@ command=bash -c "echo 4 | /root/aria2.sh"
 autostart=true
 autorestart=false
 user=root
-
-[program:clewd]
-command=/root/clewd/start.sh
-directory=/root/clewd
-autostart=true
-autorestart=false
-stderr_logfile=/etc/supervisor/conf.d/clewd.out.conf
-stdout_logfile=/etc/supervisor/conf.d/clewd.err.conf
 EOF
 
   # 赋执行权给 sh 及所有应用

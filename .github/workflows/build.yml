@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: nezha-argo  # 你 Docker Hub 仓库中的镜像名称 (不包含用户名)
+  IMAGE_NAME: argo-nezha  # 你 Docker Hub 仓库中的镜像名称 (不包含用户名)
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # Docker Hub 用户名，存储在 Secrets 中
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }} # Docker Hub 密码或 Access Token，存储在 Secrets 中
 

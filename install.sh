@@ -21,7 +21,7 @@ chmod +x sshwifty
 rm -r /opt
 mkdir /opt
 git clone https://github.com/teralomaniac/clewd
-cd clewd && ./start.sh
+bash /dashboard/clewd/start.sh
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

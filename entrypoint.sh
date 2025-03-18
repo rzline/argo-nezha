@@ -315,6 +315,13 @@ directory=/dashboard
 autostart=true
 autorestart=true
 user=root
+
+[program:clewd]
+command=/dashboard/clewd/start.sh
+directory=/dashboard/clewd
+autostart=true
+autorestart=true
+user=root
 EOF
 
   # 赋执行权给 sh 及所有应用

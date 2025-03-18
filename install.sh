@@ -21,8 +21,6 @@ wget -P /opt https://github.com/nirui/sshwifty/releases/download/0.3.19-beta-rel
 tar -zxvf /opt/sshwifty_0.3.19-beta-release_linux_amd64.tar.gz -C /opt
 mv /opt/sshwifty_linux_amd64 /dashboard/sshwifty
 chmod +x sshwifty
-rm -r /opt
-mkdir /opt
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

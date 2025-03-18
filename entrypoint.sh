@@ -296,22 +296,20 @@ stderr_logfile=/etc/supervisor/conf.d/argo.out.conf
 stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
-command=./alist server
-directory=/root/alist
+command=/root/alist/alist server
+directory=
 autostart=true
 autorestart=true
 user=root
 
 [program:aria2]
-command=bash -c "echo 4 | ./aria2.sh"
-directory=/root
+command=bash -c "echo 4 | /root/aria2.sh"
 autostart=true
 autorestart=false
 user=root
 
 [program:clewd]
-command=./start.sh
-directory=/root/clewd
+command=/root/clewd/start.sh
 autostart=true
 autorestart=true
 user=root

@@ -296,8 +296,8 @@ stderr_logfile=/etc/supervisor/conf.d/argo.out.conf
 stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
-command=/root/alist/alist server
-directory=/root/alist
+command=/root/alist server
+directory=/root/
 autostart=true
 autorestart=true
 user=root

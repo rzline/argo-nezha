@@ -4,7 +4,7 @@ set -e
 
 cd
 apt-get update
-apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates nodejs npm
+apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates
 wget -N git.io/aria2.sh
 chmod +x aria2.sh
 echo 1 | ./aria2.sh
@@ -15,8 +15,6 @@ tar -zxvf alist-linux-amd64.tar.gz
 chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
-git clone https://github.com/teralomaniac/clewd -b test
-cd clewd && ./start.sh
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

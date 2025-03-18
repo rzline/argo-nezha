@@ -2,7 +2,6 @@
 
 set -e
 
-cd
 apt-get update
 apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates
 wget -N git.io/aria2.sh
@@ -20,3 +19,6 @@ git config --global core.compression 0
 git config --global advice.detachedHead false
 git config --global pack.threads 1
 git config --global pack.windowMemory 50m
+apt-get clean
+rm -rf /var/lib/apt/lists/*
+rm install.sh

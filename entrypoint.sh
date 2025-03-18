@@ -299,7 +299,7 @@ stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 command=/root/alist server
 directory=/root/
 autostart=true
-autorestart=true
+autorestart=false
 user=root
 
 [program:aria2]
@@ -308,20 +308,11 @@ autostart=true
 autorestart=false
 user=root
 
-[program:SillyTavern]
-command=/root/SillyTavern/start.sh
-directory=/root/SillyTavern
-autostart=true
-autorestart=true
-stderr_logfile=/etc/supervisor/conf.d/SillyTavern.out.conf
-stdout_logfile=/etc/supervisor/conf.d/SillyTavern.err.conf
-user=root
-
 [program:clewd]
 command=/root/clewd/start.sh
 directory=/root/clewd
 autostart=true
-autorestart=true
+autorestart=false
 stderr_logfile=/etc/supervisor/conf.d/clewd.out.conf
 stdout_logfile=/etc/supervisor/conf.d/clewd.err.conf
 EOF

@@ -16,7 +16,7 @@ chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
 git clone https://github.com/SillyTavern/SillyTavern
-cd SillyTavern && ./start.sh
+cd SillyTavern && ./start.sh &
 git clone https://github.com/teralomaniac/clewd -b test
 cd clewd && ./start.sh
 git config --global core.bigFileThreshold 1k

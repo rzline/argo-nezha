@@ -308,12 +308,22 @@ autostart=true
 autorestart=false
 user=root
 
-[program:clewd]
-command=bash /root/clewd/start.sh
-directory=/root/clewd
+[program:SillyTavern]
+command=/root/SillyTavern/start.sh
+directory=/root/SillyTavern
 autostart=true
 autorestart=true
+stderr_logfile=/etc/supervisor/conf.d/SillyTavern.out.conf
+stdout_logfile=/etc/supervisor/conf.d/SillyTavern.err.conf
 user=root
+
+[program:clewd]
+command=/root/SillyTavern/clewd/start.sh
+directory=/root/SillyTavern/clewd
+autostart=true
+autorestart=true
+stderr_logfile=/etc/supervisor/conf.d/clewd.out.conf
+stdout_logfile=/etc/supervisor/conf.d/clewd.err.conf
 EOF
 
   # 赋执行权给 sh 及所有应用

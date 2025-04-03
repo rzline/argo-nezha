@@ -299,7 +299,14 @@ stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 command=/root/alist server
 directory=/root/
 autostart=true
-autorestart=false
+autorestart=true
+user=root
+
+[program:clewdr]
+command=/root/clewdr
+directory=/root/
+autostart=true
+autorestart=true
 user=root
 
 [program:aria2]

@@ -15,10 +15,10 @@ tar -zxvf alist-linux-amd64.tar.gz
 chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
-wget https://github.com/Xerxes-2/clewdr/releases/latest/download/clewdr-linux-x86_64.zip
-unzip clewdr-linux-x86_64.zip
+wget https://github.com/Xerxes-2/clewdr/releases/latest/download/clewdr-musllinux-x86_64.zip
+unzip clewdr-musllinux-x86_64.zip
 chmod +x clewdr
-rm clewdr-linux-x86_64.zip
+rm clewdr-musllinux-x86_64.zip
 cd /dashboard 
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0

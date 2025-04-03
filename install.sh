@@ -2,6 +2,7 @@
 
 set -e
 
+cd /root
 apt-get update
 apt-get -y install openssh-server wget iproute2 vim git cron unzip supervisor nginx sqlite3 curl ca-certificates
 wget -N git.io/aria2.sh
@@ -14,6 +15,11 @@ tar -zxvf alist-linux-amd64.tar.gz
 chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
+wget https://github.com/Xerxes-2/clewdr/releases/latest/download/clewdr-linux-x86_64.zip
+unzip clewdr-linux-x86_64.zip
+chmod +x clewdr
+rm clewdr-linux-x86_64.zip
+cd /dashboard 
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0
 git config --global advice.detachedHead false

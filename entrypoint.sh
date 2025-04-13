@@ -296,24 +296,21 @@ stderr_logfile=/etc/supervisor/conf.d/argo.out.conf
 stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
-command=/root/alist server
-directory=/root/
+command=./alist server
+directory=/root/alist
 autostart=true
 autorestart=true
-user=root
 
-[program:clewdr]
-command=/root/clewdr
-directory=/root/
+[program:uptime-kuma]
+command=node server.js
+directory=/root/uptime-kuma/server
 autostart=true
 autorestart=true
-user=root
 
 [program:aria2]
 command=bash -c "echo 4 | /root/aria2.sh"
 autostart=true
 autorestart=false
-user=root
 EOF
 
   # 赋执行权给 sh 及所有应用

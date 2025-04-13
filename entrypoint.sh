@@ -296,14 +296,12 @@ stderr_logfile=/etc/supervisor/conf.d/argo.out.conf
 stdout_logfile=/etc/supervisor/conf.d/argo.err.conf
 
 [program:alist]
-command=./alist server
-directory=/root/alist
+command=/root/alist/alist server
 autostart=true
 autorestart=true
 
 [program:uptime-kuma]
-command=node server/server.js
-directory=/root/uptime-kuma
+command=node /root/uptime-kumaserver/server.js
 autostart=true
 autorestart=false
 

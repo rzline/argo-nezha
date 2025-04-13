@@ -302,10 +302,10 @@ autostart=true
 autorestart=true
 
 [program:uptime-kuma]
-command=node server.js
-directory=/root/uptime-kuma/server
+command=node server/server.js
+directory=/root/uptime-kuma
 autostart=true
-autorestart=true
+autorestart=false
 
 [program:aria2]
 command=bash -c "echo 4 | /root/aria2.sh"

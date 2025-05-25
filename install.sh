@@ -17,10 +17,6 @@ tar -zxvf alist-linux-amd64.tar.gz
 chmod +x alist
 ./alist admin set 123456
 rm alist-linux-amd64.tar.gz
-cd
-git clone https://github.com/louislam/uptime-kuma.git
-cd uptime-kuma
-npm run setup
 cd /dashboard 
 git config --global core.bigFileThreshold 1k
 git config --global core.compression 0

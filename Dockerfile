@@ -1,4 +1,4 @@
-FROM debian
+FROM ghcr.io/astral-sh/uv:debian
 
 WORKDIR /dashboard
 
